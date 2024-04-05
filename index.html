@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Dataset Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Music Dataset Search</h1>
+        <form action="/results" method="post">
+            <input type="text" id="query" name="query" placeholder="Enter search term" required>
+            <div class="search-options">
+                <label><input type="radio" name="search_type" value="artist" checked> Artist</label>
+                <label><input type="radio" name="search_type" value="album"> Album</label>
+                <label><input type="radio" name="search_type" value="genre"> Genre</label>
+                <label><input type="radio" name="search_type" value="song"> Song Name</label>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>

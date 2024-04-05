@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        <p>Showing results for "{{ query }}" by {{ search_type }}</p>
+        <ul class="song-list">
+            {% for song in results %}
+                <li>
+                    <div class="song-info">
+                        <h2>{{ song['track_name'] }}</h2>
+                        <p>Artist: {{ song['artists'] }}</p>
+                        <p>Album: {{ song['album_name'] }}</p>
+                        <p>Popularity: {{ song['popularity'] }}</p>
+                        <p>Duration: {{ song['duration_ms'] }} ms</p>
+                        <p>Explicit: {{ song['explicit'] }}</p>
+                        <p>Danceability: {{ song['danceability'] }}</p>
+                        <p>Energy: {{ song['energy'] }}</p>
+                        <p>Key: {{ song['key'] }}</p>
+                        <p>Loudness: {{ song['loudness'] }}</p>
+                        <p>Mode: {{ song['mode'] }}</p>
+                        <p>Speechiness: {{ song['speechiness'] }}</p>
+                        <p>Acousticness: {{ song['acousticness'] }}</p>
+                        <p>Instrumentalness: {{ song['instrumentalness'] }}</p>
+                        <p>Liveness: {{ song['liveness'] }}</p>
+                        <p>Valence: {{ song['valence'] }}</p>
+                        <p>Tempo: {{ song['tempo'] }}</p>
+                        <p>Time Signature: {{ song['time_signature'] }}</p>
+                        <p>Genre: {{ song['track_genre'] }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/">Back to Search</a>
+    </div>
+</body>
+</html>
